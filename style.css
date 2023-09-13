@@ -146,6 +146,11 @@ a:hover {
   transform: none;
 }
 
+.menu-links a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
 /* SECTIONS */
 
 section {
@@ -261,6 +266,58 @@ section {
   gap: 1rem;
 }
 
+/* Add hover effects for icons */
+.icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animate the profile section on entry */
+#profile {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#profile.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll animations using CSS class 'animate-on-scroll' */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Define specific animations for different sections */
+#section1.active .animate-on-scroll,
+#section2.active .animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Example of a modal window */
+.modal {
+  display: none;
+  /* Add modal styles */
+}
+
+/* Dynamic color theme toggle */
+.theme-toggle {
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: #ff5733; /* Change color on hover */
+}
+
+/* Add other interactive elements, animations, and features as needed */
+
+
 /* ABOUT SECTION */
 
 #about {
@@ -365,7 +422,7 @@ article .icon {
 }
 
 img {
-    border-radius: 50%;
+    border-radius: 10%;
   }
 
 .project-img {
@@ -383,6 +440,43 @@ img {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+/* Define the animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to elements in the Projects section */
+#projects .color-container,
+#projects .project-title,
+#projects .project-btn {
+  animation: fadeIn 0.5s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+
+/* Add a scale effect on hover for project images */
+#projects .project-img:hover {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+  transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+/* Change the background color on hover for color containers */
+#projects .color-container:hover {
+  background: rgb(200, 200, 200); /* Adjust the color as needed */
+  transition: background 0.3s ease-in-out; /* Add smooth transition */
+}
+
+/* Change text color and border color on hover for buttons */
+#projects .project-btn:hover {
+  color: white; /* Change text color on hover */
+  border-color: rgb(100, 100, 100); /* Change border color on hover */
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add smooth transitions */
+}
+
 
 /* CONTACT */
 
@@ -433,4 +527,91 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
