@@ -86,3 +86,23 @@ document.addEventListener("DOMContentLoaded", function () {
     captionText.innerHTML = dots[slideIndex - 1].alt;
   }
 
+  // Function to toggle between light and dark modes
+function toggleTheme() {
+  const body = document.body;
+  const themeToggleBtn = document.getElementById("theme-toggle");
+
+  if (body.classList.contains("dark-mode")) {
+    // Switch to light mode
+    body.classList.remove("dark-mode");
+    themeToggleBtn.textContent = "Toggle Dark Mode";
+  } else {
+    // Switch to dark mode
+    body.classList.add("dark-mode");
+    themeToggleBtn.textContent = "Toggle Light Mode";
+  }
+}
+
+// Attach the toggleTheme function to the button's click event
+document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+
+

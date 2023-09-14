@@ -8,7 +8,16 @@
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #ffffff;
 }
 
 html {
@@ -614,4 +623,20 @@ footer p {
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+/* Style for the theme toggle button */
+.theme-toggle-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #2980b9;
 }
